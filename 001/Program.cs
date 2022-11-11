@@ -23,14 +23,16 @@ void PrintArray(int[,] matr, int[,] matr1)
     {
         for (int n = 0; n < matr.GetLength(1); n++)
         {
-            Console.Write($"{matr[m, n]} ");
+            Console.Write($"{matr[m, n]}\t ");
         }
+
     }
+Console.WriteLine();
     for (int m = 0; m < matr1.GetLength(0); m++)
     {
         for (int n = 0; n < matr1.GetLength(1); n++)
         {
-            Console.Write($"{matr1[m, n]} ");
+            Console.Write($"{matr1[m, n]}\t ");
         }
     }
 }
@@ -52,7 +54,7 @@ void PrintCompArray(int[,] compMatr)
     {
         for (int n = 0; n < compMatr.GetLength(1); n++)
         {
-            Console.Write($"{compMatr[m, n]} ");
+            Console.Write($"{compMatr[m, n]}\t ");
         }
     }
 }
@@ -64,4 +66,5 @@ FillArray(matrix, matrix1);
 PrintArray(matrix, matrix1);
 Console.WriteLine();
 Composition(matrix, matrix1, compMatrix);
+Console.WriteLine();
 PrintCompArray(compMatrix);
