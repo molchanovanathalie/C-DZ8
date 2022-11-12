@@ -1,7 +1,7 @@
 ﻿// Показать треугольник Паскаля *Сделать вывод в виде равнобедренного треугольника
-int row = 6;
+int row = 9;
 int[,] triangle = new int[row, row];
-const int cellWidth = 1;
+const int cellWidth = 3;
 
 void FillTriangle()
 {
@@ -24,7 +24,7 @@ void PrintTriangle()
 {
     for (int i = 0; i < row; i++)
     {
-        for (int j = 1; j < row; j++)
+        for (int j = 0; j < row; j++)
         {
             if (triangle[i, j] != 0)
                 Console.Write($"{triangle[i, j],cellWidth}");
@@ -41,7 +41,7 @@ void Magic()
         for (int j = 0; j <= i; j++)
         {
             Console.SetCursorPosition(col, i + 1);
-            if (triangle[i, j] % 2 != 0) Console.Write("*");
+            if(triangle[i, j] !=0) Console.Write($"{triangle[i,j],cellWidth}");
             col += cellWidth * 2;
         }
         col = cellWidth * row - cellWidth * (i + 1);
@@ -51,6 +51,6 @@ void Magic()
 }
 Console.ReadLine();
 FillTriangle();
-PrintTriangle();
+//PrintTriangle();
 Console.ReadLine();
 Magic();
