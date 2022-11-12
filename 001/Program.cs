@@ -12,7 +12,7 @@ void FillArray(int[,] matrix, int[,] matrix1)
     {
         for (int j = 0; j < matrix1.GetLength(1); j++)
         {
-            matrix1[i, j] = new Random().Next(1, 10);
+            matrix1[i, j] = new Random().Next(4, 15);
         }
     }
 }
