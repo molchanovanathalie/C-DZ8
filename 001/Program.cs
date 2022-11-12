@@ -1,38 +1,38 @@
 ﻿// Найти произведение двух матриц
 void FillArray(int[,] matrix, int[,] matrix1)
 {
-    for (int m = 0; m < matrix.GetLength(0); m++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int n = 0; n < matrix.GetLength(1); n++)
+        for (int j = 0; j< matrix.GetLength(1); j++)
         {
-            matrix[m, n] = new Random().Next(1, 10);
+            matrix[i, j] = new Random().Next(1, 10);
         }
     }
-    for (int m = 0; m < matrix1.GetLength(0); m++)
+    for (int i = 0; i < matrix1.GetLength(0); i++)
     {
-        for (int n = 0; n < matrix1.GetLength(1); n++)
+        for (int j = 0; j < matrix1.GetLength(1); j++)
         {
-            matrix1[m, n] = new Random().Next(1, 10);
+            matrix1[i, j] = new Random().Next(1, 10);
         }
     }
 }
 
 void PrintArray(int[,] matrix, int[,] matrix1)
 {
-    for (int m = 0; m < matrix.GetLength(0); m++)
+    for (int i = 0; i < matrix.GetLength(0);i++)
     {
-        for (int n = 0; n < matrix.GetLength(1); n++)
+        for (int j = 0;j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[m, n]}\t");
+            Console.Write($"{matrix[i, j]}\t");
         }
         Console.WriteLine();
     }
     Console.WriteLine();
-    for (int m = 0; m < matrix1.GetLength(0); m++)
+    for (int i = 0; i < matrix1.GetLength(0); i++)
     {
-        for (int n = 0; n < matrix1.GetLength(1); n++)
+        for (int j = 0; j < matrix1.GetLength(1); j++)
         {
-            Console.Write($"{matrix1[m, n]}\t");
+            Console.Write($"{matrix1[i, j]}\t");
         }
         Console.WriteLine();
     }
@@ -40,22 +40,22 @@ void PrintArray(int[,] matrix, int[,] matrix1)
 
 void Composition(int[,] matrix, int[,] matrix1, int[,] compMatr)
 {
-    for (int m = 0; m < matrix.GetLength(0); m++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int n = 0; n < matrix.GetLength(1); n++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            compMatr[m, n] = matrix[m, n] * matrix1[m, n];
+            compMatr[i, j] = matrix[i, j] * matrix1[i, j];
         }
     }
 }
 
 void PrintCompArray(int[,] compMatr)
 {
-    for (int m = 0; m < compMatr.GetLength(0); m++)
+    for (int i = 0; i < compMatr.GetLength(0); i++)
     {
-        for (int n = 0; n < compMatr.GetLength(1); n++)
+        for (int j= 0; j < compMatr.GetLength(1); j++)
         {
-            Console.Write($"{compMatr[m, n]}\t");
+            Console.Write($"{compMatr[i, j]}\t");
         }
         Console.WriteLine();
     }
