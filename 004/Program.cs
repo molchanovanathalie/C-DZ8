@@ -1,56 +1,33 @@
 ﻿// Показать треугольник Паскаля *Сделать вывод в виде равнобедренного треугольника
-int row = 9;
-int[,] triangle = new int[row, row];
-const int cellWidth = 3;
-
-void FillTriangle()
+void Pascal(int size)
 {
-    for (int i = 0; i < row; i++)
-    {
-        triangle[i, 0] = 1;
-        triangle[i, i] = 1;
-    }
+int[,] pascal = new int[size, size];
 
-    for (int i = 2; i < row; i++)
+    for (int i = 0; i < size; i++)
     {
-        for (int j = 1; j <= i; j++)
+        for (int j = 0; j < size; j++)
         {
-            triangle[i, j] = triangle[i - 1, j - 1] + triangle[i - 1, j];
+        if (i == j || j == 0)
+        {
+            pascal[i, j] = 1;
         }
-    }
-}
-
-void PrintTriangle()
-{
-    for (int i = 0; i < row; i++)
-    {
-        for (int j = 0; j < row; j++)
+        else if (j > i)
         {
-            if (triangle[i, j] != 0)
-                Console.Write($"{triangle[i, j],cellWidth}");
+           pascal[i, j] = 0; // как вместо нуля поставить пробел?
+        }
+        else if (i != j)
+        {
+            pascal[i, j] = pascal[i - 1, j - 1] + pascal[i - 1, j];
+        }
+        
+        Console.Write($"{pascal[i, j]}" +"\t");
         }
         Console.WriteLine();
     }
 }
+Console.Write("Введите размер: ");
+int size = int.Parse(Console.ReadLine() ?? "0");
+Pascal(size);
 
-void Magic()
-{
-    int col = cellWidth * row;
-    for (int i = 0; i < row; i++)
-    {
-        for (int j = 0; j <= i; j++)
-        {
-            Console.SetCursorPosition(col, i + 1);
-            if(triangle[i, j] !=0) Console.Write($"{triangle[i,j],cellWidth}");
-            col += cellWidth * 2;
-        }
-        col = cellWidth * row - cellWidth * (i + 1);
-        Console.WriteLine();
-    }
 
-}
-Console.ReadLine();
-FillTriangle();
-//PrintTriangle();
-Console.ReadLine();
-Magic();
+
